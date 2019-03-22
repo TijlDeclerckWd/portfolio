@@ -1,0 +1,64 @@
+.header {
+  height: 100vh;
+  background-color: #09224f;
+  .header-container {
+    padding: 0;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];;
+    grid-template-rows: auto;
+    .img {
+      height: 100%;
+      background-image: linear-gradient(to bottom, rgba(9,34,79,.2), rgba(9,34,79,.2)), url("/assets/images/profile-2.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      grid-column: 5 / -1;
+      grid-row: 1 / -1;
+      z-index: 1;
+      opacity: .5;
+      background-position: right center;
+    }
+
+    .titles-container {
+      grid-column: 2 / -4;
+      color: #fff;
+      grid-row: 1 / -1;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-content: space-evenly;
+
+      .title {
+        font-weight: 700;
+        font-size: 46px;
+        line-height: 3.8rem;
+        font-family: montserrat, sans-serif;
+      }
+    }
+  }
+}
+
+.skills {
+  background-color: #fff;
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding: 0 4rem;
+    grid-gap: 3rem;
+
+    .example-card {
+      border-radius: 5px;
+      margin-top: -15%;
+      margin-bottom: 15%;
+      z-index: 6;
+
+      .card-img {
+        height: 20rem;
+      }
+    }
+  }
+}
+
+
+
