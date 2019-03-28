@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
+import { OtherSkillsComponent } from './home/other-skills/other-skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    OtherSkillsComponent
   ],
   imports: [
     BrowserModule,
