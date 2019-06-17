@@ -1,3 +1,5 @@
+@import "../../SCSS/abstracts/mixins";
+
 .other-skills-section {
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.5),
@@ -6,6 +8,10 @@
   background-size: cover;
   padding: 3rem;
   position: relative;
+
+  @include respond(tab-port) {
+    padding: 1.5rem;
+  }
 
   .title {
     color: #fff;
@@ -23,6 +29,11 @@
 
     grid-gap: 1.5rem;
     padding: 1.5rem;
+
+    @include respond(tab-port) {
+      grid-gap: .5rem;
+      padding: .5rem;
+    }
 
     &__item {
       border: 1px solid #ddd;

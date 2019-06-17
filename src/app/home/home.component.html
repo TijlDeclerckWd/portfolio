@@ -3,32 +3,30 @@
     <div class="img"></div>
     <div class="titles-container">
       <h1 class="title">Hi, I'm Tijl!</h1>
-      <h4>Full Stack Web Developer from Belgium</h4>
+      <h4 class="subtitle">Full Stack Web Developer from Belgium</h4>
     </div>
   </div>
 </section>
 <section class="skills">
   <div class="skills-container">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Front End Development</mat-card-title>
-        <mat-card-subtitle>HTML, CSS, Javascript, Angular</mat-card-subtitle>
+    <mat-card [style.marginTop.rem]="getMarginTop(1)" class="example-card">
+      <mat-card-header class="example-card__header">
+        <mat-card-title>Front End Dev<span *ngIf="innerWidth > 600">elopment</span></mat-card-title>
+        <!--<mat-card-subtitle>HTML, CSS, Javascript, Angular</mat-card-subtitle>-->
       </mat-card-header>
       <img class="card-img" mat-card-image src="/assets/images/front-end.jpg" alt="front-end">
     </mat-card>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Back End Development</mat-card-title>
-        <mat-card-subtitle>Node.js, Express, MongoDB, Socket.io,...</mat-card-subtitle>
+    <mat-card [style.marginTop.rem]="getMarginTop(2)" class="example-card">
+      <mat-card-header class="example-card__header">
+        <mat-card-title>Back End Dev<span *ngIf="innerWidth > 600">elopment</span></mat-card-title>
+        <!--<mat-card-subtitle>Node.js, Express, MongoDB, Socket.io,...</mat-card-subtitle>-->
       </mat-card-header>
       <img class="card-img" mat-card-image src="/assets/images/nodejs.jpeg" alt="Photo of a Shiba Inu">
     </mat-card>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+    <mat-card [style.marginTop.rem]="getMarginTop(3)" class="example-card">
+      <mat-card-header class="example-card__header">
         <mat-card-title>Web Design</mat-card-title>
-        <mat-card-subtitle>CSS, SCSS, Responsive design,...</mat-card-subtitle>
+        <!--<mat-card-subtitle>CSS, SCSS, Responsive design,...</mat-card-subtitle>-->
       </mat-card-header>
       <img class="card-img" mat-card-image src="/assets/images/responsive.jpg" alt="Photo of a Shiba Inu">
     </mat-card>
