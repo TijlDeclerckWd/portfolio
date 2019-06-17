@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   getMarginTop(num) {
-    if (this.innerWidth < 350ng) {
+    if (this.innerWidth < 350) {
       if (num === 1) {
         return -10;
       } else {
