@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
     this.innerWidth = window.innerWidth;
   }
 
-
   constructor() { }
 
   ngOnInit() {
@@ -24,18 +23,18 @@ export class HomeComponent implements OnInit {
   getMarginTop(num) {
     if (this.innerWidth < 350) {
       if (num === 1) {
-        return -10;
+        return -7;
       } else {
         return 0;
       }
     } else if (this.innerWidth < 580) {
       if (num === 1 || num === 2) {
-        return -10;
+        return -7;
       } else {
         return 0;
       }
     } else {
-      return -10;
+      return -7;
     }
   }
 

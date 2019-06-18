@@ -1,0 +1,79 @@
+@import "../../scss/abstracts/mixins";
+
+$height: 58.5rem;
+$width: 46.8rem;
+
+.who-am-i {
+  min-height: 35rem;
+  background-color: #09224f;
+  padding: 3rem 10rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .text-section {
+    background-color: #fff;
+    border-radius: 1.5rem 0 0 1.5rem;
+    padding: 6rem 2rem;
+    display: flex;
+    align-items: center;
+    .text-container {
+      display: grid;
+
+      grid-template-columns: repeat(12, 1fr);
+
+      .about-me {
+grid-column: 2 / -2;
+        font-size: 5.5rem;
+      }
+      .line {
+        height: 1rem;
+        grid-row: 2/3;
+        grid-column: 2/4;
+        background-color: orange;
+        border-radius: 1rem;
+      }
+
+      .description {
+        grid-column: 2 / -2;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      .hire-me-btn {
+grid-column: 2 / 6;
+        background-color: orange;
+        padding: 1rem;
+        text-transform: uppercase;
+        margin-top: 3rem;
+        color: #fff;
+      }
+    }
+  }
+
+  .img-section {
+    background-color: #fff;
+    border-radius: 0 1.5rem 1.5rem 0;
+
+    display: flex;
+justify-content: center;
+    align-items: center;
+    .tijl-img {
+      height: $height;
+      width: $width;
+      @include respond(tab-land) {
+        height: calc(.9 * #{$height});
+        width: calc(.9 * #{$width});
+      }
+      @include respond(tab-port) {
+        height: calc(.8 * #{$height});
+        width: calc(.8 * #{$width});
+      }
+      @include respond(phone) {
+        height: calc(.6 * #{$height});
+        width: calc(.6 * #{$width});
+      }
+//transform: scale(1.5) translateY(5rem);
+    }
+  }
+}

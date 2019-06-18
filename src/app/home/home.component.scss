@@ -19,11 +19,11 @@
       background-image: linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url("/assets/images/final-profile-pic.png");
       background-size: inherit;
       background-repeat: no-repeat;
+      background-position: left center;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
       z-index: 1;
       opacity: .5;
-      background-position: left center;
 
       @include respond(tab-port) {
         background-position: left bottom;
@@ -36,9 +36,9 @@
       color: #fff;
       grid-row: 1 / -1;
       z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-content: space-evenly;
+      //display: flex;
+      //flex-direction: column;
+      //align-content: space-evenly;
 
       @include respond(tab-port) {
         grid-row: 1 / 2;
@@ -52,6 +52,10 @@
         line-height: 3.8rem;
         font-family: montserrat, sans-serif;
         margin-bottom: 2rem;
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+        animation-name: slide-in-right;
+        animation-duration: 2.5s;
 
         @include respond(tab-port) {
           font-size: 7.7rem;
@@ -66,6 +70,11 @@
       .subtitle {
         font-size: 3.3rem;
         font-weight: 600;
+        opacity: 0;
+        animation-name: fade-in;
+        animation-duration: 1s;
+        animation-delay: 2.5s;
+        animation-fill-mode: forwards;
 
         @include respond(tab-port) {
           font-size: 2.2rem;
@@ -100,7 +109,7 @@
       }
 
       &__header {
-        height: 10rem;
+        height: 7rem !important;
         display: flex;
         align-items: center;
         text-align: center;
@@ -136,6 +145,51 @@
 ::ng-deep .mat-card-header-text {
   width: 100% !important;
 }
+
+/* #### ANIMATIONS #### */
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0%   {
+    opacity: 0;
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);}
+  50%  {
+    opacity: .8;
+    -moz-transform: translateX(-10%);
+    -ms-transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 

@@ -9,13 +9,15 @@ import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import { OtherSkillsComponent } from './home/other-skills/other-skills.component';
+import { WhoAmIComponent } from './home/who-am-i/who-am-i.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    OtherSkillsComponent
+    OtherSkillsComponent,
+    WhoAmIComponent
   ],
   imports: [
     BrowserModule,
