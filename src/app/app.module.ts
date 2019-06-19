@@ -10,6 +10,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import { OtherSkillsComponent } from './home/other-skills/other-skills.component';
 import { WhoAmIComponent } from './home/who-am-i/who-am-i.component';
+import {NgbModal, NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +21,17 @@ import { WhoAmIComponent } from './home/who-am-i/who-am-i.component';
     NavbarComponent,
     HomeComponent,
     OtherSkillsComponent,
-    WhoAmIComponent
+    WhoAmIComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

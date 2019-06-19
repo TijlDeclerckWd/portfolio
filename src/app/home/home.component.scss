@@ -17,9 +17,9 @@
     .img {
       height: 100%;
       background-image: linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url("/assets/images/final-profile-pic.png");
-      background-size: inherit;
+      background-size: contain;
       background-repeat: no-repeat;
-      background-position: left center;
+      background-position: left bottom;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
       z-index: 1;

@@ -53,3 +53,25 @@ margin-left: 5rem;
   }
 }
 
+
+// #### MODAL ####
+
+
+    .upper-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+.form-group {
+  padding: .5rem;
+}
+
+    .form-control {
+      background-color: #ddd;
+    }
+
+    .extra {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
