@@ -57,21 +57,42 @@ margin-left: 5rem;
 // #### MODAL ####
 
 
-    .upper-form {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
+.modal-header {
+  text-align: center;
+  color: darkblue;
+   flex-direction: column;
+  background-color: #eee;
+
+  & > * {
+    margin: 0 auto;
+  }
+
+  .modal-title {
+    text-transform: uppercase;
+    font-weight: 700;
+
+  }
+}
+
+.upper-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 .form-group {
   padding: .5rem;
 }
 
-    .form-control {
-      background-color: #ddd;
-    }
+.form-control {
+  background-color: #ddd;
+}
 
-    .extra {
-      text-align: center;
-      margin-top: 1rem;
-    }
+.extra {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: darkred;
+}
 
