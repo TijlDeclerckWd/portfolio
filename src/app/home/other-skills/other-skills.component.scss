@@ -36,9 +36,8 @@
     }
 
     &__item {
-      border: 1px solid #ddd;
       background-color: #ddd;
-      border-radius: 5px;
+      border-radius: 10px;
       opacity: .8;
       &--1 {
         grid-row: 4 / 5;
@@ -101,6 +100,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      border-radius: 10px;
     }
   }
 

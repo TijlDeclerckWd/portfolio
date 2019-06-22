@@ -12,7 +12,10 @@
           <a class="nav-link" routerLink="/projects">Projects</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" (click)="openModal(content)">Contact</a>
+          <a class="nav-link" routerLink="/projects">References</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="openModal()">Contact</a>
         </li>
       </ul>
     </div>
@@ -24,7 +27,7 @@
 <ng-template class="modal" #content let-modal>
   <div class="modal-header">
     <h2 class="modal-title" id="modal-basic-title">Contact me</h2>
-    <h4 class="modal-subtitle">And I will answer your question as soon as possible</h4>
+    <h4 class="modal-subtitle">I will respond to your message as soon as possible</h4>
   </div>
   <div class="modal-body">
     <form [formGroup]="contactForm" class="form" (ngSubmit)="submitForm()">
@@ -50,7 +53,7 @@
         <textarea name="message" formControlName="message" placeholder="Let us know what you think" id="message" class="message form-control" cols="30" rows="20"></textarea>
         <p *ngIf="f.get('message').hasError('required') && f.get('message').touched" class="error-message">Entering a message is required</p>
       </div>
-      <button type="submit" class="btn btn-primary btn-block py-2">Send Fo|rm</button>
+      <button type="submit" class="btn btn-primary btn-block py-2">Send Form</button>
       <p class="extra"><em>You can also directly contact me on my email: tijl.declerck@outlook.com</em></p>
     </form>
   </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PortfolioService} from '../../services/portfolio.service';
 
 @Component({
   selector: 'who-am-i',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhoAmIComponent implements OnInit {
 
-  constructor() { }
+  constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit() {
+  }
+
+  openModal() {
+    this.portfolioService.openModal.next();
   }
 
 }
