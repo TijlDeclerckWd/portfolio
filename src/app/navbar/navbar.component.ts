@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
     return this.contactForm;
   }
 
+
   constructor(
     private modalService: NgbModal,
     private fb: FormBuilder,
@@ -30,6 +31,7 @@ export class NavbarComponent implements OnInit {
     private portfolioService: PortfolioService) {
     this.notifier = notifierService;
   }
+
 
   ngOnInit() {
     this.portfolioService.openModal.subscribe(() => {
