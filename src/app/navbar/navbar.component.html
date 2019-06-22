@@ -12,7 +12,10 @@
           <a class="nav-link" routerLink="/projects">Projects</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" (click)="openModal(content)">Contact</a>
+          <a class="nav-link" routerLink="/projects">References</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="openModal()">Contact</a>
         </li>
       </ul>
     </div>
@@ -23,32 +26,35 @@
 
 <ng-template class="modal" #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    <h2 class="modal-title" id="modal-basic-title">Contact me</h2>
+    <h4 class="modal-subtitle">I will respond to your message as soon as possible</h4>
   </div>
   <div class="modal-body">
     <form [formGroup]="contactForm" class="form" (ngSubmit)="submitForm()">
       <div class="upper-form">
         <div class="form-group">
           <input type="text" placeholder="First Name" id="firstName" formControlName="firstName" class="form-control">
+          <p *ngIf="f.get('firstName').hasError('required') && f.get('firstName').touched" class="error-message">First name is required</p>
         </div>
         <div class="form-group">
           <input type="text" placeholder="Last Name" formControlName="lastName" id="lastName" class="form-control">
+          <p *ngIf="f.get('lastName').hasError('required') && f.get('lastName').touched" class="error-message">Last name is required</p>
         </div>
         <div class="form-group">
           <input type="email" placeholder="Email" formControlName="email" id="email" class="form-control">
+          <p *ngIf="f.get('email').hasError('required') && f.get('email').touched" class="error-message">Email is required</p>
+          <p *ngIf="f.get('email').hasError('email') && f.get('email').touched" class="error-message">This is not a valid email address</p>
         </div>
         <div class="form-group">
           <input type="text" placeholder="Company" id="company" formControlName="company" class="form-control">
         </div>
       </div>
       <div class="form-group">
-        <textarea name="message" placeholder="Let us know what you think" id="message" class="message form-control" cols="30" rows="20"></textarea>
+        <textarea name="message" formControlName="message" placeholder="Let us know what you think" id="message" class="message form-control" cols="30" rows="20"></textarea>
+        <p *ngIf="f.get('message').hasError('required') && f.get('message').touched" class="error-message">Entering a message is required</p>
       </div>
-      <button type="submit" class="btn btn-primary btn-block py-2">Send Question</button>
-      <p class="extra"><em>You can also contact me directly on my email: tijl.declerck@outlook.com</em></p>
+      <button type="submit" class="btn btn-primary btn-block py-2">Send Form</button>
+      <p class="extra"><em>You can also directly contact me on my email: tijl.declerck@outlook.com</em></p>
     </form>
   </div>
 </ng-template>

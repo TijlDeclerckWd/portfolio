@@ -13,6 +13,10 @@ import { WhoAmIComponent } from './home/who-am-i/who-am-i.component';
 import {NgbModal, NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {NotifierModule} from 'angular-notifier';
+import { ProjectsComponent } from './projects/projects.component';
+import {PortfolioService} from './services/portfolio.service';
 
 
 @NgModule({
@@ -22,18 +26,29 @@ import {ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     OtherSkillsComponent,
     WhoAmIComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,
-    NgbModule
+    NgbModule,
+    NotifierModule.withConfig({
+      position: {
+        horizontal: {
+          position: 'right'
+        }
+      }
+    })
   ],
-  providers: [],
+  providers: [
+PortfolioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

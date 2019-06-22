@@ -47,6 +47,12 @@ grid-column: 2 / 6;
         text-transform: uppercase;
         margin-top: 3rem;
         color: #fff;
+        transition: all .3s;
+
+        &:hover {
+          transform: translateY(-.3rem);
+          box-shadow: 0 .5rem 1rem rgba(#000, .2);
+        }
       }
     }
   }

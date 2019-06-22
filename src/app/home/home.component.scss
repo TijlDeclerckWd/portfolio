@@ -2,7 +2,7 @@
 
 .header {
   height: 100vh;
-  background-color: #09224f;
+  background-color: rgba(#09224f,.5);
 
   @include respond(tab-port) {
     height: 80vh;
@@ -16,8 +16,8 @@
     grid-template-rows: repeat(2, 1fr);
     .img {
       height: 100%;
-      background-image: linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url("/assets/images/final-profile-pic.png");
-      background-size: contain;
+      background-image: linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url("/assets/images/home-background-10.png");
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: left bottom;
       grid-column: 1 / -1;
@@ -27,7 +27,6 @@
 
       @include respond(tab-port) {
         background-position: left bottom;
-        background-size: contain;
       }
     }
 
@@ -80,6 +79,34 @@
           font-size: 2.2rem;
         }
       }
+
+      //.logo-container {
+      //  display: flex;
+      //  margin-top: 2rem;
+      //
+      //  & > * {
+      //    width: 4rem;
+      //    height: 4rem;
+      //    border-radius: 50%;
+      //    margin-right: 2rem;
+      //  }
+      //
+      //  .linkedin-logo {
+      //    opacity: 0;
+      //    animation-name: fade-in-2;
+      //    animation-duration: 1s;
+      //    animation-delay: 3.5s;
+      //    animation-fill-mode: forwards;
+      //  }
+      //
+      //  .facebook-logo {
+      //    opacity: 0;
+      //    animation-name: fade-in-2;
+      //    animation-duration: 1s;
+      //    animation-delay: 4s;
+      //    animation-fill-mode: forwards;
+      //  }
+      //}
     }
   }
 }
@@ -187,6 +214,17 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-2 {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: .7;
+    transform: translateX(0);
   }
 }
 
