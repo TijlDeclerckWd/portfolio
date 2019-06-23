@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   contactForm;
   private notifier: NotifierService;
 
-  @ViewChild('content') content;
+  @ViewChild('content', {static: true}) content;
 
   get f() {
     return this.contactForm;

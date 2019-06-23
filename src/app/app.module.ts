@@ -17,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NotifierModule} from 'angular-notifier';
 import { ProjectsComponent } from './projects/projects.component';
 import {PortfolioService} from './services/portfolio.service';
+import { ReferencesComponent } from './references/references.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {PortfolioService} from './services/portfolio.service';
     OtherSkillsComponent,
     WhoAmIComponent,
     ContactFormComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ReferencesComponent
   ],
   imports: [
     BrowserModule,
