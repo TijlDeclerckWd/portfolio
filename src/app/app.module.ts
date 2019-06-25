@@ -18,6 +18,10 @@ import {NotifierModule} from 'angular-notifier';
 import { ProjectsComponent } from './projects/projects.component';
 import {PortfolioService} from './services/portfolio.service';
 import { ReferencesComponent } from './references/references.component';
+import {RouterModule} from '@angular/router';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 
 
 @NgModule({
@@ -46,11 +50,16 @@ import { ReferencesComponent } from './references/references.component';
           position: 'right'
         }
       }
-    })
+    }),
+    FontAwesomeModule
   ],
   providers: [
 PortfolioService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    library.add(faCoffee);
+  }
+}

@@ -1,0 +1,25 @@
+.btn-lift {
+  border-radius: 5px;
+  transition: all .3s;
+
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(#000,.2);
+
+    &::after {
+      /*what scale does is increase the element*/
+      /*there's scale, scaleX and scaleY*/
+      transform: scaleX(1.5) scaleY(1.4);
+      /*this makes the ::after button go invisible after the 0.4 seconds in the transition*/
+      opacity: 0;
+    }
+  }
+
+  /*When we click the button that is called the active state*/
+  /*this transform state is always related to the hover state, not the hover state.*/
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(#000,.2);
+  }
+ }

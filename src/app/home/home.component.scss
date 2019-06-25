@@ -80,6 +80,47 @@
         }
       }
 
+      .logo-container {
+        margin-top: 1rem;
+        display: flex;
+        .fa {
+          color: white;
+          height: 4.5rem;
+          width: 4.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2.5rem;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          padding: 1rem;
+          margin-right: 1.5rem;
+          opacity: 0;
+          transition: all .3s !important;
+          animation-name: fade-in-2;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 1 !important;
+            //transform: scale(1.1) !important;
+          }
+        }
+
+        .fa-linkedin {
+          animation-delay: 3.5s;
+        }
+
+        .fa-twitter {
+          animation-delay: 4s;
+        }
+
+        .fa-facebook {
+          animation-delay: 4.5s;
+        }
+      }
+
       //.logo-container {
       //  display: flex;
       //  margin-top: 2rem;
