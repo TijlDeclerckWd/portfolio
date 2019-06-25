@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PortfolioService} from '../../services/portfolio.service';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'who-am-i',
@@ -10,11 +11,16 @@ export class WhoAmIComponent implements OnInit {
 
   constructor(private portfolioService: PortfolioService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  openModal() {
-    this.portfolioService.openModal.next();
+  downloadResume() {
+    this.portfolioService.downloadResume()
+      .subscribe((file) => {
+        console.log('file', file);
+        saveAs(file, 'CV Tijl Declerck');
+      });
+
+
   }
 
 }

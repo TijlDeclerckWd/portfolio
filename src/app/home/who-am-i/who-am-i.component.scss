@@ -23,7 +23,7 @@ $width: 46.8rem;
       grid-template-columns: repeat(12, 1fr);
 
       .about-me {
-grid-column: 2 / -2;
+        grid-column: 2 / -2;
         font-size: 5.5rem;
       }
       .line {
@@ -38,6 +38,25 @@ grid-column: 2 / -2;
         grid-column: 2 / -2;
         margin-top: 3rem;
         font-size: 1.5rem;
+      }
+
+      .data-container {
+        grid-column: 2 / -2;
+        margin-top: 3rem;
+
+        & > * {
+          display: grid;
+          grid-template-columns: 10rem min-content 1fr;
+          margin-bottom: 2rem;
+        }
+
+        .type {
+          font-weight: 600;
+        }
+
+        .data {
+          margin-left: 3rem;
+        }
       }
 
       .hire-me-btn {
