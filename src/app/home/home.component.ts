@@ -9,6 +9,9 @@ export class HomeComponent implements OnInit {
 
   innerWidth: number;
 
+  imgUrl;
+  imgPreloadUrl = '/assets/images/home-background-10.png';
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
@@ -18,6 +21,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
    this.innerWidth = window.innerWidth;
+  }
+
+  determineBackground() {
+    return `linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url(${this.imgUrl})`;
   }
 
   getMarginTop(num) {
@@ -36,6 +43,10 @@ export class HomeComponent implements OnInit {
     } else {
       return -7;
     }
+  }
+
+  setImgUrl() {
+      this.imgUrl = this.imgPreloadUrl;
   }
 
 }

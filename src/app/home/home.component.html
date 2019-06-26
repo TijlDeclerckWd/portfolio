@@ -1,42 +1,50 @@
-<section class="header">
-  <div class="container-fluid header-container">
-    <div class="img"></div>
-    <div class="titles-container">
-      <h1 class="title">Hi, I'm Tijl!</h1>
-      <h4 class="subtitle">Web Developer from Brussels, Belgium</h4>
-      <div class="logo-container">
-        <i class="fa fa-linkedin circle"></i>
-        <i class="fa fa-twitter circle"></i>
-        <i class="fa fa-facebook circle"></i>
+<img [src]="imgPreloadUrl" (load)="setImgUrl()" alt="home-background" class="pre-load">
+<ng-container *ngIf="imgUrl; else spinner">
+  <section class="header">
+    <div class="container-fluid header-container">
+      <div class="img" [style.background-image]="this.determineBackground()"></div>
+      <div class="titles-container">
+        <h1 class="title">Hi, I'm Tijl!</h1>
+        <h4 class="subtitle">Web Developer from Brussels, Belgium</h4>
+        <div class="logo-container">
+          <i class="fa fa-linkedin circle"></i>
+          <i class="fa fa-twitter circle"></i>
+          <i class="fa fa-facebook circle"></i>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="skills">
-  <div class="skills-container">
-    <mat-card [style.marginTop.rem]="getMarginTop(1)" class="example-card">
-      <mat-card-header class="example-card__header">
-        <mat-card-title>Front-end Dev<span *ngIf="innerWidth > 600">elopment</span></mat-card-title>
-        <!--<mat-card-subtitle>HTML, CSS, Javascript, Angular</mat-card-subtitle>-->
-      </mat-card-header>
-      <img class="card-img" mat-card-image src="/assets/images/front-end.jpg" alt="front-end">
-    </mat-card>
-    <mat-card [style.marginTop.rem]="getMarginTop(2)" class="example-card">
-      <mat-card-header class="example-card__header">
-        <mat-card-title>Back-end Dev<span *ngIf="innerWidth > 600">elopment</span></mat-card-title>
-        <!--<mat-card-subtitle>Node.js, Express, MongoDB, Socket.io,...</mat-card-subtitle>-->
-      </mat-card-header>
-      <img class="card-img" mat-card-image src="/assets/images/nodejs.jpeg" alt="Photo of a Shiba Inu">
-    </mat-card>
-    <mat-card [style.marginTop.rem]="getMarginTop(3)" class="example-card">
-      <mat-card-header class="example-card__header">
-        <mat-card-title>Web Design</mat-card-title>
-        <!--<mat-card-subtitle>CSS, SCSS, Responsive design,...</mat-card-subtitle>-->
-      </mat-card-header>
-      <img class="card-img" mat-card-image src="/assets/images/responsive.jpg" alt="Photo of a Shiba Inu">
-    </mat-card>
-  </div>
-</section>
-<who-am-i></who-am-i>
-<other-skills></other-skills>
+  </section>
+  <section class="skills">
+    <div class="skills-container">
+      <mat-card [style.marginTop.rem]="getMarginTop(1)" class="example-card">
+        <mat-card-header class="example-card__header">
+          <mat-card-title>Front-end Dev<span *ngIf="innerWidth > 600">elopment</span></mat-card-title>
+          <!--<mat-card-subtitle>HTML, CSS, Javascript, Angular</mat-card-subtitle>-->
+        </mat-card-header>
+        <img class="card-img" mat-card-image src="/assets/images/front-end.jpg" alt="front-end">
+      </mat-card>
+      <mat-card [style.marginTop.rem]="getMarginTop(2)" class="example-card">
+        <mat-card-header class="example-card__header">
+          <mat-card-title>Back-end Dev<span *ngIf="innerWidth > 600">elopment</span></mat-card-title>
+          <!--<mat-card-subtitle>Node.js, Express, MongoDB, Socket.io,...</mat-card-subtitle>-->
+        </mat-card-header>
+        <img class="card-img" mat-card-image src="/assets/images/nodejs.jpeg" alt="Photo of a Shiba Inu">
+      </mat-card>
+      <mat-card [style.marginTop.rem]="getMarginTop(3)" class="example-card">
+        <mat-card-header class="example-card__header">
+          <mat-card-title>Web Design</mat-card-title>
+          <!--<mat-card-subtitle>CSS, SCSS, Responsive design,...</mat-card-subtitle>-->
+        </mat-card-header>
+        <img class="card-img" mat-card-image src="/assets/images/responsive.jpg" alt="Photo of a Shiba Inu">
+      </mat-card>
+    </div>
+  </section>
+  <who-am-i></who-am-i>
+  <other-skills></other-skills>
+</ng-container>
 
+<ng-template #spinner>
+  <div class="spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

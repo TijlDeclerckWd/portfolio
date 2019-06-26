@@ -269,6 +269,17 @@
   }
 }
 
+.pre-load {
+  position: absolute;
+  top: -300rem;
+}
+
+.spinner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 

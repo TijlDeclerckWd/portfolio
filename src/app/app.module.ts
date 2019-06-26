@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
 import { OtherSkillsComponent } from './home/other-skills/other-skills.component';
 import { WhoAmIComponent } from './home/who-am-i/who-am-i.component';
 import {NgbModal, NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -43,6 +43,7 @@ import {faCoffee} from '@fortawesome/free-solid-svg-icons';
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     NgbModule,
     NotifierModule.withConfig({
       position: {
