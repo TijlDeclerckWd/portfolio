@@ -1,6 +1,7 @@
 .nav-container {
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  font-family: montserrat, sans-serif;
   .navbar {
     grid-column: center-start / center-end;
     background-color: transparent;
