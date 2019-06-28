@@ -1,6 +1,6 @@
-<div class="projects">
+<div class="projects" *ngIf="bgImageLoaded && projectImageLoaded; else spinner">
   <div class="projects-container">
-    <div class="current-project current-project--smartfit">
+    <div class="current-project current-project--smartfit" [style.background-image]="determineBgImg()">
       <h2 class="project-title project-title--smartfit">Smartfit-PT</h2>
       <div class="current-project__header">
         <div class="first-col">
@@ -9,7 +9,7 @@
           <h4 class="project-year project-li project-li--3"><strong>Year:</strong>2019</h4>
         </div>
         <div class="img-col">
-          <img src="/assets/images/smartfit-home.png" alt="smartfit-home" class="project-img">
+          <img [src]="projectImageLoaded" alt="smartfit-home" class="project-img">
         </div>
         <div class="third-col">
           <h4 class="project-back project-li--third-col project-li--4"><strong>Backend:</strong> Node.js / Express </h4>
@@ -109,3 +109,13 @@
     </div>
   </div>
 </div>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+
+<img src="/assets/images/smartfit-home.png" (load)="projectImageLoaded = projectImagePreload"  class="background-image pre-load">
+<img src="/assets/images/desk-3.png" (load)="bgImageLoaded = bgImagePreload" class="project-image pre-load">
