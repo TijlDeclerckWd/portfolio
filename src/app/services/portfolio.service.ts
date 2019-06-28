@@ -11,7 +11,7 @@ export class PortfolioService {
   openModal = new Subject();
   BASE_API_URL = environment.BASE_API_URL;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   downloadResume() {
     return this.http.get(`${this.BASE_API_URL}/file/downloadFile/CV-English.pdf`, {responseType: 'blob' });
