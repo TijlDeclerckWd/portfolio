@@ -4,6 +4,7 @@ import {FormBuilder, ValidationErrors, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {NotifierService} from 'angular-notifier';
 import {PortfolioService} from '../services/portfolio.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'navbar',
@@ -60,7 +61,7 @@ export class NavbarComponent implements OnInit {
       console.log('submitting the form', this.contactForm.value);
       const data = this.contactForm.value;
 
-      this.http.post('http://localhost:3000/api/mail/sendMail', data)
+      this.http.post(`${environment.BASE_API_URL}/mail/sendMail`, data)
         .subscribe((res: { complete: boolean, message: string }) => {
           if (res.complete) {
             this.notifier.notify('success', 'Successfully contacted Tijl Declerck');
@@ -69,7 +70,7 @@ export class NavbarComponent implements OnInit {
           } else {
             this.notifier.notify('error', 'Oops! Something went wrong, please try again');
           }
-        });
+        }, (err) => this.notifier.notify('error', 'Oops! Something went wrong, please try again late'));
     } else {
       this.notifier.notify('error', 'Please make sure you have completed all the required fields');
     }
