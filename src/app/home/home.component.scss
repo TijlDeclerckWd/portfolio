@@ -102,6 +102,7 @@
           animation-name: fade-in-2;
           animation-duration: 1s;
           animation-fill-mode: forwards;
+          -webkit-animation-fill-mode: forwards;
           cursor: pointer;
 
           &:hover {
