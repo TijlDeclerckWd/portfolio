@@ -12,12 +12,21 @@ $width: 54.8rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
+  @include respond(tab-port){
+    grid-template-columns: 100%;
+    padding: 0;
+  }
+
   .text-section {
     background-color: #fff;
     border-radius: 1.5rem 0 0 1.5rem;
     padding: 6rem 2rem;
     display: flex;
     align-items: center;
+
+    @include respond(tab-port) {
+      border-radius: 0;
+    }
     .text-container {
       display: grid;
 
@@ -80,10 +89,13 @@ grid-column: 2 / 6;
   .img-section {
     background-color: #fff;
     border-radius: 0 1.5rem 1.5rem 0;
-
     display: flex;
 justify-content: center;
     align-items: center;
+
+    @include respond(tab-port) {
+      border-radius: 0;
+    }
     .tijl-img {
       height: $height;
       width: $width;
