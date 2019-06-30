@@ -19,6 +19,10 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     font-size: 4rem;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
   }
 
   .gallery {
@@ -31,14 +35,21 @@
     padding: 1.5rem;
 
     @include respond(tab-port) {
-      grid-gap: .5rem;
-      padding: .5rem;
+      margin-top: 1rem;
+      grid-gap: 0;
+      padding: 0;
     }
 
     &__item {
       background-color: #ddd;
       border-radius: 10px;
       opacity: .8;
+
+      @include respond(tab-port) {
+        border-radius: 0;
+        margin: 0 !important;
+      }
+
       &--1 {
         grid-row: 4 / 5;
         grid-column: 3 / span 2;
@@ -101,6 +112,10 @@
       object-fit: cover;
       display: block;
       border-radius: 10px;
+
+      @include respond(tab-port) {
+        border-radius: 0;
+      }
     }
   }
 
