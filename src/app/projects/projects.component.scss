@@ -1,7 +1,6 @@
 @import "../scss/components/buttons";
 
 .projects {
-  padding-top: 10rem;
   background-image: linear-gradient(to right, #0f3a88, #09224f);
   min-height: 100vh;
   font-family: montserrat, sans-serif;
@@ -40,12 +39,12 @@ position: relative;
 
         &--smartfit {
           //clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-          margin-top: 3rem;
           background-image: linear-gradient(to right, rgba(#fff, .8), rgba(#ddd, .8)),  url("/assets/images/desk-3.png");
+
         }
 
         &--octonius {
-
+          padding-top: 15rem;
           background-image: linear-gradient(to right, rgba(#0f3a88, .8), rgba(#09224f, .8)), url("/assets/images/desk-background.jpg");
           background-color: #09224f;
           color: #eee;

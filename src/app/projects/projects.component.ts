@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  projectImagePreload = "/assets/images/smartfit-home.png";
+  projectImagePreload = "/assets/images/octonius.png";
   bgImagePreload = "/assets/images/desk-3.png";
 
   bgImageLoaded: string;

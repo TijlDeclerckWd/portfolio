@@ -1,6 +1,44 @@
 <div class="projects" *ngIf="bgImageLoaded && projectImageLoaded; else spinner">
   <div class="projects-container">
-    <div class="current-project current-project--smartfit" [style.background-image]="determineBgImg()">
+    <div class="current-project current-project--octonius" [style.background-image]="determineBgImg()">
+      <h2 class="project-title project-title--octonius">Octonius</h2>
+      <div class="current-project__header">
+        <div class="first-col">
+          <h4 class="project-name project-li project-li--1"><strong>Name: </strong>Octonius</h4>
+          <h4 class="project-front project-li"><strong>Front-end:</strong> Angular</h4>
+          <h4 class="project-year project-li project-li--3"><strong>Year: </strong>2019</h4>
+        </div>
+        <div class="img-col">
+          <img [src]="projectImageLoaded" alt="smartfit-home" class="project-img">
+        </div>
+        <div class="third-col">
+          <h4 class="project-back project-li--third-col project-li--4"><strong>Backend:</strong> Node.js / Express </h4>
+          <h4 class="project-type project-li--third-col"><strong>Type:</strong> Desktop first</h4>
+          <h4 class="project-type project-li--third-col project-li--6"><strong>Type:</strong> Mobile-first PWA</h4>
+        </div>
+      </div>
+      <div class="current-project__description">
+        <p class="description">For 4-5 months I had an internship where I worked on the Octonius app. The app was a multi-platform application which main purpose was providing structure to the schedule
+          of a professional group. In the app they could create groups, create tasks and follow up on the progress made.
+          <br><br>
+          My responsibilities were mostly on the front-end, but I often did work on the Node.js back-end API as well. During my internship I
+          implemented a subscription payment system, reorganized and made the front-end structure more efficient and components more reusable,
+          implemented an email notification system, added live notifications to the application with the help of web sockets, implemented
+          a search feature so people could easily find posts & tasks, and many more features.
+          <br><br>
+          My internship was very important for my interpersonal skills as well as it learned me to program on a project with other people as well.
+          The internship was crucial for improving working with version control like GIT and Github.
+
+          <u>Unfortunately I can't share the code because of an NDA, but you can contact me directly if you have further questions or visit the
+            references section to see what my colleagues said about my contributions.</u>
+        </p>
+      </div>
+      <div class="current-project__buttons">
+        <button class="btn btn-lift btn-warning"><a href="https://octonius.com/" target="_blank">Visit Website Octonius</a></button>
+      </div>
+    </div>
+
+    <div class="current-project current-project--smartfit">
       <h2 class="project-title project-title--smartfit">Smartfit-PT</h2>
       <div class="current-project__header">
         <div class="first-col">
@@ -9,7 +47,7 @@
           <h4 class="project-year project-li project-li--3"><strong>Year:</strong>2019</h4>
         </div>
         <div class="img-col">
-          <img [src]="projectImageLoaded" alt="smartfit-home" class="project-img">
+          <img src="/assets/images/smartfit-home.png" alt="smartfit-home" class="project-img">
         </div>
         <div class="third-col">
           <h4 class="project-back project-li--third-col project-li--4"><strong>Backend:</strong> Node.js / Express </h4>
@@ -37,42 +75,6 @@
         <button class="btn btn-lift btn-warning"><a href="https://github.com/TijlDeclerckWd/smartfit-pt-5" target="_blank">Github repository</a></button>
       </div>
     </div>
-    <div class="current-project current-project--octonius">
-      <h2 class="project-title project-title--octonius">Octonius</h2>
-      <div class="current-project__header">
-        <div class="first-col">
-          <h4 class="project-name project-li project-li--1"><strong>Name: </strong>Octonius</h4>
-          <h4 class="project-front project-li"><strong>Front-end:</strong> Angular</h4>
-          <h4 class="project-year project-li project-li--3"><strong>Year: </strong>2019</h4>
-        </div>
-        <div class="img-col">
-          <img src="/assets/images/octonius.png" alt="smartfit-home" class="project-img">
-        </div>
-        <div class="third-col">
-          <h4 class="project-back project-li--third-col project-li--4"><strong>Backend:</strong> Node.js / Express </h4>
-          <h4 class="project-type project-li--third-col"><strong>Type:</strong> Desktop first</h4>
-          <h4 class="project-type project-li--third-col project-li--6"><strong>Type:</strong> Mobile-first PWA</h4>
-        </div>
-      </div>
-      <div class="current-project__description">
-        <p class="description">For 4-5 months I had an internship where I worked on the Octonius app. The app was a multi-platform application which main purpose was providing structure to the schedule
-        of a professional group. In the app they could create groups, create tasks and follow up on the progress made.
-          <br><br>
-          My responsibilities were mostly on the front-end, but I often did work on the Node.js back-end API as well. During my internship I
-          implemented a subscription payment system, reorganized and made the front-end structure more efficient and components more reusable,
-          implemented an email notification system, added live notifications to the application with the help of web sockets, implemented
-          a search feature so people could easily find posts & tasks, and many more features.
-          <br><br>
-          My internship was very important for my interpersonal skills as well as it learned me to program on a project with other people as well.
-          The internship was crucial for improving working with version control like GIT and Github.<u>Unfortunately I can't share the code because of an NDA,
-            but you can contact me directly if you have further questions.</u>
-        </p>
-      </div>
-      <div class="current-project__buttons">
-        <button class="btn btn-lift btn-warning"><a href="https://octonius.com/" target="_blank">Visit Website Octonius</a></button>
-      </div>
-    </div>
-
     <div class="current-project current-project--hp">
       <h2 class="project-title project-title--hp">Wizard's Unite Fans</h2>
       <div class="current-project__header">
