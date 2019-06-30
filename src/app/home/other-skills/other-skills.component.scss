@@ -44,10 +44,10 @@
       background-color: #ddd;
       border-radius: 10px;
       opacity: .8;
+      margin: 0 !important;
 
       @include respond(tab-port) {
         border-radius: 0;
-        margin: 0 !important;
       }
 
       &--1 {
