@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   innerWidth: number;
 
   imgUrl;
-  imgPreloadUrl = '/assets/images/home-background-10.png';
+  imgPreloadUrl = '/assets/images/home-background-10-b.png';
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
