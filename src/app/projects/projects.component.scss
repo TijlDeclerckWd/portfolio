@@ -24,7 +24,7 @@ position: relative;
       }
 
       &--hp {
-        color: #000;
+
       }
     }
 
@@ -51,7 +51,8 @@ position: relative;
         }
 
         &--hp {
-          background-image: linear-gradient(to right, rgba(#fff, .8), rgba(#ddd, .8)),  url("/assets/images/desk-background.jpg");
+          background-image: linear-gradient(to right, rgba(#0f3a88, .8), rgba(#09224f, .8)),  url("/assets/images/desk-background.jpg");
+          color: #fff;
           //clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
         }
 
