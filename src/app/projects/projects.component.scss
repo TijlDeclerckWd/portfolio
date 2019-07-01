@@ -171,4 +171,8 @@ position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .mat-spinner-color::ng-deep circle {
+    stroke: #fff !important;
+  }
 }
