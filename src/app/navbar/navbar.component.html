@@ -53,8 +53,11 @@
         <textarea name="message" formControlName="message" placeholder="Let us know what you think" id="message" class="message form-control" cols="30" rows="20"></textarea>
         <p *ngIf="f.get('message').hasError('required') && f.get('message').touched" class="error-message">Entering a message is required</p>
       </div>
-      <button type="submit" class="btn btn-primary btn-block py-2">Send Form</button>
+      <button type="submit" class="btn btn-block btn-lift py-2" [disabled]="disabledForm">Send Form</button>
       <p class="extra"><em>You can also directly contact me on my email: tijl.declerck@outlook.com</em></p>
+      <div *ngIf="disabledForm" class="spinner-container">
+        <mat-spinner [diameter]="30" class="mat-spinner-color"></mat-spinner>
+      </div>
     </form>
   </div>
 </ng-template>

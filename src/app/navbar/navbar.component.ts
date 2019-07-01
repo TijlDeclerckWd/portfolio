@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   modalRef;
   contactForm;
   private notifier: NotifierService;
+  disabledForm = false;
 
   @ViewChild('content', {static: true}) content;
 
@@ -40,6 +41,10 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  disableForm() {
+    this.disabledForm = true;
+  }
+
   openModal() {
     this.initiateForm();
     this.modalRef = this.modalService.open(this.content, { centered: true });
@@ -61,16 +66,21 @@ export class NavbarComponent implements OnInit {
       console.log('submitting the form', this.contactForm.value);
       const data = this.contactForm.value;
 
+      this.disableForm();
+
       this.http.post(`${environment.BASE_API_URL}/mail/sendMail`, data)
         .subscribe((res: { complete: boolean, message: string }) => {
           if (res.complete) {
             this.notifier.notify('success', 'Successfully contacted Tijl Declerck');
             this.modalRef.close();
+            this.disabledForm = false;
             this.resetForm();
           } else {
             this.notifier.notify('error', 'Oops! Something went wrong, please try again');
+            this.disabledForm = false;
           }
-        }, (err) => this.notifier.notify('error', 'Oops! Something went wrong, please try again late'));
+        }, (err) => this.notifier.notify('error', 'Oops! Something went wrong, please try again later'));
+
     } else {
       this.notifier.notify('error', 'Please make sure you have completed all the required fields');
     }
