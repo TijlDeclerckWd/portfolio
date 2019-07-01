@@ -1,21 +1,21 @@
 <div class="nav-container">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button #toggler class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/home" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a (click)="closeNav()" class="nav-link" routerLink="/home" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/projects" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{exact: true}">Projects</a>
+          <a (click)="closeNav()" class="nav-link" routerLink="/projects" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{exact: true}">Projects</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/references" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{exact: true}">References</a>
+          <a (click)="closeNav()" class="nav-link" routerLink="/references" [routerLinkActive]="'active-link'" [routerLinkActiveOptions]="{exact: true}">References</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" (click)="openModal()">Contact</a>
+          <a class="nav-link" (click)="openModal(); closeNav()">Contact</a>
         </li>
       </ul>
     </div>

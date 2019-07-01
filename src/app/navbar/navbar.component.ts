@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, ValidationErrors, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
@@ -17,13 +17,19 @@ export class NavbarComponent implements OnInit {
   contactForm;
   private notifier: NotifierService;
   disabledForm = false;
+  innerWidth;
 
-  @ViewChild('content', {static: true}) content;
+  @ViewChild('content', { static: true }) content;
+  @ViewChild('toggler', { static: true }) toggler;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
+  }
 
   get f() {
     return this.contactForm;
   }
-
 
   constructor(
     private modalService: NgbModal,
@@ -34,11 +40,18 @@ export class NavbarComponent implements OnInit {
     this.notifier = notifierService;
   }
 
-
   ngOnInit() {
     this.portfolioService.openModal.subscribe(() => {
       this.openModal();
     });
+
+    this.innerWidth = window.innerWidth;
+  }
+
+  closeNav() {
+    if (this.innerWidth < 900) {
+      this.toggler.nativeElement.click();
+    }
   }
 
   disableForm() {
@@ -62,8 +75,6 @@ export class NavbarComponent implements OnInit {
 
   submitForm() {
     if (this.contactForm.valid) {
-      // const data =
-      console.log('submitting the form', this.contactForm.value);
       const data = this.contactForm.value;
 
       this.disableForm();
@@ -79,8 +90,10 @@ export class NavbarComponent implements OnInit {
             this.notifier.notify('error', 'Oops! Something went wrong, please try again');
             this.disabledForm = false;
           }
-        }, (err) => this.notifier.notify('error', 'Oops! Something went wrong, please try again later'));
-
+        }, (err) => {
+          this.notifier.notify('error', 'Oops! Something went wrong, please try again later');
+          this.disabledForm = false;
+        });
     } else {
       this.notifier.notify('error', 'Please make sure you have completed all the required fields');
     }
