@@ -309,5 +309,9 @@
   align-items: center;
 }
 
+:host /deep/ .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #fff;
+}
+
 
 
