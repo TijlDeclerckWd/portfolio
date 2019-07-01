@@ -9,14 +9,18 @@ import { saveAs } from 'file-saver';
 })
 export class WhoAmIComponent implements OnInit {
 
+  downloadLoading = false;
+
   constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit() {}
 
   downloadResume() {
+    this.downloadLoading = true;
     this.portfolioService.downloadResume()
       .subscribe((file) => {
         console.log('file', file);
+        this.downloadLoading = false;
         saveAs(file, 'CV Tijl Declerck');
       });
 

@@ -36,6 +36,7 @@
     </div>
   </div>
   <button (click)="downloadResume()" class="hire-me-btn btn">Download Resume!</button>
+  <div class="spinner-container"><mat-spinner *ngIf="downloadLoading" class="mat-spinner-color" [diameter]="20"></mat-spinner></div>
 </div>
 </div>
   <div class="img-section">

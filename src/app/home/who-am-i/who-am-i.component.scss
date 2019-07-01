@@ -53,6 +53,7 @@ $width: 54.8rem;
       .data-container {
         grid-column: 2 / -2;
         margin-top: 3rem;
+        margin-bottom: 2rem;
 
         & > * {
           display: grid;
@@ -74,9 +75,10 @@ grid-column: 2 / 6;
         background-color: orange;
         padding: 1rem;
         text-transform: uppercase;
-        margin-top: 3rem;
+        //margin-top: 3rem;
         color: #fff;
         transition: all .3s;
+        align-self: center;
 
         @include respond(phone) {
           grid-column: 5 / 9;
@@ -117,5 +119,15 @@ justify-content: center;
       }
 //transform: scale(1.5) translateY(5rem);
     }
+  }
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mat-spinner-color::ng-deep circle {
+    stroke: #09224f !important;
   }
 }
