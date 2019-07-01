@@ -1,6 +1,6 @@
 <div class="projects" *ngIf="bgImageLoaded && projectImageLoaded; else spinner">
   <div class="projects-container">
-    <div class="current-project current-project--octonius" [style.background-image]="determineBgImg()">
+    <div class="current-project current-project--octonius" [style.background-image]="determineBgImg()" [style.padding-top.rem]="calculatePaddingTop()">
       <h2 class="project-title project-title--octonius">Octonius</h2>
       <div class="current-project__header">
         <div class="first-col">
