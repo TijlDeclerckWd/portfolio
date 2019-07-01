@@ -1,3 +1,5 @@
+@import "../scss/abstracts/mixins";
+
 .nav-container {
   display: grid;
   grid-template-columns: [center-start] repeat(10, [col-start] 1fr [col-end]) [center-end];
@@ -13,6 +15,17 @@
     animation-name: slide-in-top;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+
+    .navbar-nav {
+      margin-left: auto;
+      margin-right: auto;
+
+      @include respond(tab-port) {
+        margin-left: 3rem;
+        margin-right: 0;
+      }
+
+    }
 
     .navbar-brand {
       color: #fff;
@@ -34,6 +47,10 @@ margin-left: 5rem;
         line-height: normal;
         white-space: nowrap;
         transition: all .2s;
+
+        @include respond(tab-port) {
+          font-size: 1.5rem;
+        }
 
         &:hover {
           transform: translateY(-.3rem) scale(1.1);
