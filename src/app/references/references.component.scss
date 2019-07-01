@@ -1,12 +1,12 @@
 @import "../scss/abstracts/mixins";
 
 .references {
-  padding-top: 15rem;
   background-image: linear-gradient(to bottom right, rgba(#000,.9), rgba(#000,.8)), url("/assets/images/code-example.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left bottom;
   font-family: montserrat, sans-serif;
+  transition: all 1s;
   &__title {
     font-size: 3.5rem;
     text-align: center;

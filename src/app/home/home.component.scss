@@ -14,6 +14,11 @@
     height: 100%;
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];;
     grid-template-rows: repeat(2, 1fr);
+
+    @include respond(tab-port) {
+      align-items: flex-start;
+    }
+
     .img {
       height: 100%;
       background-image: linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url("/assets/images/home-background-10.png");
@@ -35,12 +40,17 @@
       color: #fff;
       grid-row: 1 / -1;
       z-index: 2;
+      transition: all 1s;
       //display: flex;
       //flex-direction: column;
       //align-content: space-evenly;
 
       @include respond(phone) {
-        margin-top: 12rem;
+        margin-top: 2rem;
+      }
+
+      @include respond(tab-port) {
+        margin-top: 8rem;
       }
 
       @include respond(tab-port) {
@@ -312,6 +322,16 @@
 :host /deep/ .mat-progress-spinner circle, .mat-spinner circle {
   stroke: #fff;
 }
+
+// ANIMATION CLASSES
+.top {
+  transform: translateY(0);
+}
+
+.bottom {
+  transform: translateY(10rem);
+}
+
 
 
 

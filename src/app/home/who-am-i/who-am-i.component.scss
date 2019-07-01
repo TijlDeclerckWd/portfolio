@@ -78,6 +78,10 @@ grid-column: 2 / 6;
         color: #fff;
         transition: all .3s;
 
+        @include respond(phone) {
+          grid-column: 5 / 9;
+        }
+
         &:hover {
           transform: translateY(-.3rem);
           box-shadow: 0 .5rem 1rem rgba(#000, .2);

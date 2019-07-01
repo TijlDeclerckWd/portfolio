@@ -19,6 +19,8 @@ export class NavbarComponent implements OnInit {
   disabledForm = false;
   innerWidth;
 
+  navStatus = 'closed';
+
   @ViewChild('content', { static: true }) content;
   @ViewChild('toggler', { static: true }) toggler;
 
@@ -51,6 +53,8 @@ export class NavbarComponent implements OnInit {
   closeNav() {
     if (this.innerWidth < 900) {
       this.toggler.nativeElement.click();
+      this.navStatus = 'closed';
+      this.portfolioService.toggleNav.next({status: 'closed' });
     }
   }
 
@@ -61,6 +65,11 @@ export class NavbarComponent implements OnInit {
   openModal() {
     this.initiateForm();
     this.modalRef = this.modalService.open(this.content, { centered: true });
+  }
+
+  openNav() {
+    this.navStatus = 'open';
+    this.portfolioService.toggleNav.next({ status: this.navStatus });
   }
 
   initiateForm() {
@@ -101,6 +110,14 @@ export class NavbarComponent implements OnInit {
 
   resetForm() {
     this.contactForm.reset();
+  }
+
+  toggleNav() {
+    if (this.navStatus === 'open') {
+      this.closeNav();
+    } else {
+      this.openNav();
+    }
   }
 
   // getFormValidationErrors() {

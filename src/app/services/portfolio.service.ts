@@ -9,6 +9,7 @@ import {environment} from '../../environments/environment';
 export class PortfolioService {
 
   openModal = new Subject();
+  toggleNav = new Subject();
   BASE_API_URL = environment.BASE_API_URL;
 
   constructor(private http: HttpClient) {
