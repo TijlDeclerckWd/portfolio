@@ -19,7 +19,6 @@ export class WhoAmIComponent implements OnInit {
     this.downloadLoading = true;
     this.portfolioService.downloadResume()
       .subscribe((file) => {
-        console.log('file', file);
         this.downloadLoading = false;
         saveAs(file, 'CV Tijl Declerck');
       });
