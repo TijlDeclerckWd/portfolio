@@ -7,7 +7,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
 import { OtherSkillsComponent } from './home/other-skills/other-skills.component';
 import { WhoAmIComponent } from './home/who-am-i/who-am-i.component';
 import {NgbModal, NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -22,6 +21,8 @@ import {RouterModule} from '@angular/router';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faCoffee} from '@fortawesome/free-solid-svg-icons';
+import {MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
+
 
 
 @NgModule({
