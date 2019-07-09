@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   subscription;
 
   imgUrl;
-  imgPreloadUrl = '/assets/images/home-background-10-sm.png';
+  imgPreloadUrl = '/assets/images/home-background-10.png';
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
