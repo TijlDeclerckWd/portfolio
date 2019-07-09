@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "npm run build --aot",
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer dist/portfolio/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -56,8 +57,10 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.0",
+    "source-map-explorer": "^2.0.1",
     "ts-node": "~8.3.0",
-    "tslint": "~5.18.0"
+    "tslint": "~5.18.0",
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "engines": {
     "node": "~12.6.0",
