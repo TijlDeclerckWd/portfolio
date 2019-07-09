@@ -1,7 +1,7 @@
 @import "../../scss/abstracts/mixins";
 
-$height: 68.5rem;
-$width: 54.8rem;
+$height: 78.5rem;
+$width: 62.8rem;
 
 .who-am-i {
   min-height: 35rem;
@@ -97,7 +97,7 @@ grid-column: 2 / 6;
     border-radius: 0 1.5rem 1.5rem 0;
     display: flex;
 justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     @include respond(tab-port) {
       border-radius: 0;

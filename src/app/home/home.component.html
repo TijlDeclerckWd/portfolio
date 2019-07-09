@@ -2,7 +2,7 @@
 <ng-container *ngIf="imgUrl; else spinner">
   <section class="header">
     <div class="container-fluid header-container">
-      <div class="img" [style.background-image]="this.determineBackground()"></div>
+      <div class="img" [style.background-image]="'linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url(\'/assets/images/home-background-10-sm.png\')'"></div>
       <div class="titles-container" [ngClass]="{'top': !bottomPosition(), 'bottom': bottomPosition()}">
         <h1 class="title">Hi, I'm Tijl!</h1>
         <h4 class="subtitle">Web Developer from Brussels, Belgium</h4>
