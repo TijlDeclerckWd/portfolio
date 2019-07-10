@@ -33,9 +33,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HomeComponent,
     OtherSkillsComponent,
     WhoAmIComponent,
-    ContactFormComponent,
-    ProjectsComponent,
-    ReferencesComponent
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
