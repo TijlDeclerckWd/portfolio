@@ -14,7 +14,7 @@ const routes: Routes = [
     // This will tell Angular to preload the lazy-loaded routes after the
     // application has been bootstrapped. This will extend to both top-level
     // and nested lazy-loaded modules.
-    preloadingStrategy: PreloadAllModules
+    // preloadingStrategy: PreloadAllModules
   })],
   exports: [RouterModule]
 })
