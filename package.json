@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm run build --aot",
+    "postinstall": "ng build --aot --prod",
     "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer dist/portfolio/stats.json"
   },
   "private": true,
