@@ -5,8 +5,8 @@ import {HomeComponent} from './home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
-  { path: 'references', loadChildren: () => import(`./references/references.module`).then(m => m.ReferencesModule) },
-  { path: 'projects', loadChildren: () => import(`./projects/projects.module`).then(m => m.ProjectsModule) },
+  { path: 'references', loadChildren: () => import('./references/references.module').then(m => m.ReferencesModule) },
+  { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
 ];
 
 @NgModule({
@@ -14,7 +14,7 @@ const routes: Routes = [
     // This will tell Angular to preload the lazy-loaded routes after the
     // application has been bootstrapped. This will extend to both top-level
     // and nested lazy-loaded modules.
-    // preloadingStrategy: PreloadAllModules
+    preloadingStrategy: PreloadAllModules
   })],
   exports: [RouterModule]
 })
