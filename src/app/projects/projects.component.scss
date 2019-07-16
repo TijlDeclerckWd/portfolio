@@ -4,9 +4,10 @@
 .projects {
   display: grid;
   grid-template-columns: 5rem repeat(8, 1fr) 5rem;
+  grid-auto-rows: min-content;
   grid-gap: 2rem;
   padding: 15rem 0 0 0;
-  min-height: 100vh;
+  min-height: 300vh;
   background-image: linear-gradient(to right, rgba(#0f3a88, .8), rgba(#09224f, .8)), url("/assets/images/desk-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
