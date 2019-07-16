@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {PortfolioService} from '../services/portfolio.service';
 
+
 @Component({
   selector: 'projects',
   templateUrl: './projects.component.html',
@@ -8,15 +9,38 @@ import {PortfolioService} from '../services/portfolio.service';
 })
 export class ProjectsComponent implements OnInit {
 
-  projectImagePreload = "/assets/images/octonius.png";
-  bgImagePreload = "/assets/images/desk-3.png";
+  octoniusImages = [
+    '/assets/images/oct-activity.png',
+    '/assets/images/oct-kanban.png',
+    '/assets/images/oct-calendar.png',
+    '/assets/images/oct-home.png'];
+
+  smartfitImages = [
+    '/assets/images/sf-schedule-2.png',
+    '/assets/images/sf-chart.png',
+    '/assets/images/sf-exercise.png',
+    '/assets/images/sf-chat.png',
+    '/assets/images/sf-nav.png'
+  ];
+
+  hpImages = [
+    '/assets/images/hp-home.png',
+    '/assets/images/hp-home-2.png',
+    '/assets/images/hp-map-2.png',
+    '/assets/images/hp-forum.png',
+    '/assets/images/hp-chat.png',
+    '/assets/images/hp-login.png',
+  ];
 
   innerWidth: number;
 
   paddingTop = 5;
 
-  bgImageLoaded: string;
-  projectImageLoaded: string;
+  loaded = false;
+
+  octoniusInfo = false;
+  smartfitInfo = false;
+  hpwuInfo = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -34,22 +58,12 @@ export class ProjectsComponent implements OnInit {
       });
   }
 
-  calculatePaddingTop() {
-    if (this.innerWidth > 900) {
-      return 15;
-    } else {
-      return this.paddingTop;
-    }
-  }
-
   changeStyle(status) {
     this.paddingTop = status === 'open' ? 15 : 5;
   }
 
-
-
-  determineBgImg() {
-    return `linear-gradient(to right, rgba(#fff, .8), rgba(#ddd, .8)),  url(${this.bgImageLoaded})`;
+  toggleInfo(type) {
+    this[type] = !this[type];
   }
 
 }

@@ -9,7 +9,7 @@ import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { OtherSkillsComponent } from './home/other-skills/other-skills.component';
 import { WhoAmIComponent } from './home/who-am-i/who-am-i.component';
-import {NgbModal, NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -23,6 +23,7 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CarouselComponent } from './common/carousel/carousel.component';
 
 
 
@@ -44,7 +45,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatCardModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    NgbModule,
+    NgbModalModule,
     NotifierModule.withConfig({
       position: {
         horizontal: {

@@ -2,178 +2,120 @@
 @import "../scss/abstracts/mixins";
 
 .projects {
-  background-image: linear-gradient(to right, #0f3a88, #09224f);
+  display: grid;
+  grid-template-columns: 5rem repeat(8, 1fr) 5rem;
+  grid-gap: 2rem;
+  padding: 15rem 0 0 0;
   min-height: 100vh;
-  font-family: montserrat, sans-serif;
+  background-image: linear-gradient(to right, rgba(#0f3a88, .8), rgba(#09224f, .8)), url("/assets/images/desk-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  .projects-container {
-position: relative;
+  @include respond(tab-land) {
+    grid-template-columns: 2rem repeat(8, 1fr) 2rem;
+  }
 
-    .project-title {
-      color: orange;
-      font-size: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+  &__title {
+    grid-column: 1 / -1;
+      font-size: 3.5rem;
       text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 600 !important;
+      margin-bottom: 2rem;
+    letter-spacing: 2px;
+  }
 
-      &--smartfit {
-        color: #000;
+  .project {
+
+    @include respond(tab-port) {
+      grid-column: 2 / 10 !important;
+    }
+    &--octonius {
+      grid-column: 2/6;
+    }
+
+    &--smartfit {
+      grid-column: 6/10;
+    }
+
+    &--hpwu {
+      grid-column: 4 / 8;
+      margin-bottom: 4rem;
+    }
+
+    .example-card {
+      color: #666;
+
+      .card-content {
+        margin-top: 1rem;
+
+        .link-btn {
+          padding: .5rem 2rem;
+          margin: 2rem auto 0 auto;
+          display: block;
+
+          a {
+            text-decoration: none;
+            color: #000;
+
+          }
+        }
       }
 
-      &--octonius {
-
+      &__title {
+        text-align: center;
+        font-weight: 600;
       }
 
-      &--hp {
-
+      &__subtitle {
+        text-align: center;
+        font-weight: 600;
       }
     }
 
-      .current-project {
-        background-color: #eee;
-        padding: 6rem 2rem;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        background-repeat: no-repeat;
-        background-size: cover;
 
-        &--smartfit {
-          //clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-          background-image: linear-gradient(to right, rgba(#fff, .8), rgba(#ddd, .8)),  url("/assets/images/desk-3.png");
+    .btn-block {
+      background-color: #09224f;
+      color: #fff;
+      padding: 1rem;
+    }
 
-        }
-
-        &--octonius {
-          padding-top: 15rem;
-          background-image: linear-gradient(to right, rgba(#0f3a88, .8), rgba(#09224f, .8)), url("/assets/images/desk-background.jpg");
-          background-color: #09224f;
-          color: #eee;
-          transition: all 1s;
-        }
-
-        &--hp {
-          background-image: linear-gradient(to right, rgba(#0f3a88, .8), rgba(#09224f, .8)),  url("/assets/images/desk-background.jpg");
-          color: #fff;
-          //clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-        }
-
-
-
-        &__header {
-          display: grid;
-          grid-template-columns: 1fr 35rem 1fr;
-
-          justify-items: center;
-
-          padding: 2rem;
-
-          @include respond(tab-port) {
-            grid-template-columns: 1fr 25rem 1fr;
-          }
-
-          .project-li {
-            text-align: right;
-            &--third-col {
-              text-align: left;
-            }
-
-            &--1 {
-              transform: translateX(3rem);
-            }
-
-            &--3 {
-              transform: translateX(3rem);
-            }
-
-            &--4 {
-              transform: translateX(-3rem);
-            }
-
-            &--6 {
-              transform: translateX(-3rem);
-            }
-          }
-
-          .first-col {
-            grid-column: 1 / 2;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            justify-self: right;
-          }
-
-          .img-col {
-            grid-column: 2 / 3;
-              .project-img {
-                height: 30rem;
-                width: 30rem;
-                border-radius: 50%;
-
-                @include respond(tab-port) {
-                  height: 20rem;
-                  width: 20rem;
-                }
-              }
-          }
-
-          .third-col {
-            grid-column: 3 / 4;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            justify-self: left;
-
-          }
-        }
-
-        &__description {
-          display: flex;
-          justify-content: center;
-          font-size: 1.8rem;
-          margin-top: 2rem;
-
-          .description {
-            width: 80%;
-            text-align: center;
-          }
-        }
-
-        &__buttons {
-          display: flex;
-          justify-content: center;
-          margin: 2rem 0;
-
-          .btn {
-            padding: 1rem 4rem;
-            a {
-              text-decoration: none;
-              color: #000;
-            }
-          }
-
-        }
-      }
+    .dividing-line {
+      border: 0;
+      clear: both;
+      display: block;
+      width: 60%;
+      background-color: #888888;
+      height: 1px;
+      margin: .5rem auto 1rem auto;
+    }
   }
 }
 
 
-.pre-load {
-  position: absolute;
-  top: -300rem;
-}
 
-.spinner {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .mat-spinner-color::ng-deep circle {
-    stroke: #fff !important;
+/* #### ANIMATIONS #### */
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+

@@ -1,0 +1,12 @@
+<ngb-carousel class="carousel" >
+  <ng-container *ngFor="let image of images">
+    <ng-template ngbSlide>
+      <img #firstImg (load)="setHeight(firstImg)" [style.height.px]="imgHeights" [src]="image" alt="Random first slide w-100" class="carousel__img">
+      <!--    <div class="carousel-caption">-->
+      <!--      <h3>First slide label</h3>-->
+      <!--      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>-->
+      <!--    </div>-->
+    </ng-template>
+  </ng-container>
+
+</ngb-carousel>
