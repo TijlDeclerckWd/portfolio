@@ -10,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class CarouselComponent implements OnInit {
 
   @Input('images') images = [];
-  @Output('imgLoaded') imgLoaded = new EventEmitter();
+
 
   imgWidths: number;
   imgHeights: number;
@@ -34,7 +34,6 @@ export class CarouselComponent implements OnInit {
   setHeight(img) {
 
     if (!this.imgHeights) {
-      this.imgLoaded.emit();
       this.imgWidths = img.getBoundingClientRect().width;
       console.log('width', img.getBoundingClientRect().width);
       this.imgHeights = this.imgWidths * 0.58;

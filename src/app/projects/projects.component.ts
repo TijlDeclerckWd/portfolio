@@ -63,13 +63,6 @@ export class ProjectsComponent implements OnInit {
     this.paddingTop = status === 'open' ? 15 : 5;
   }
 
-  imgLoaded() {
-    this.totalLoaded++;
-
-    if (this.totalLoaded === 2) {
-      this.loaded = true;
-    }
-  }
 
   toggleInfo(type) {
     this[type] = !this[type];

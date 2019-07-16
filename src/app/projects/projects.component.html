@@ -1,11 +1,11 @@
 <div class="projects">
   <h2 class="projects__title">Projects</h2>
-  <div *ngIf="loaded" class="project project--octonius">
+  <div class="project project--octonius">
     <mat-card class="example-card">
       <h2 class="example-card__title">Octonius</h2>
       <h4 class="example-card__subtitle">Work collaboration app (2019)</h4>
 <!--      <hr class="dividing-line">-->
-      <carousel (imgLoaded)="imgLoaded()" [images]="octoniusImages" class="carousel"></carousel>
+      <carousel [images]="octoniusImages" class="carousel"></carousel>
       <mat-card-content class="card-content" *ngIf="octoniusInfo">
         <p>
           For 4-5 months I had an internship where I worked on the Octonius app. The app was a multi-platform application whose main purpose was providing structure to the schedule
@@ -32,7 +32,7 @@
       </mat-card-actions>
     </mat-card>
   </div>
-  <div *ngIf="loaded" class="project project--smartfit">
+  <div class="project project--smartfit">
     <mat-card class="example-card">
       <h2 class="example-card__title">Smartfit-PT</h2>
       <h4 class="example-card__subtitle">Personal training app (2019)</h4>
@@ -64,7 +64,7 @@
       </mat-card-actions>
     </mat-card>
   </div>
-  <div *ngIf="loaded" class="project project--hpwu">
+  <div class="project project--hpwu">
     <mat-card class="example-card">
       <h2 class="example-card__title">Harry Potter: Wizards Unite Fans</h2>
       <h4 class="example-card__subtitle">Fan Website (2018)</h4>
