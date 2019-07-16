@@ -36,7 +36,7 @@ export class ProjectsComponent implements OnInit {
 
   paddingTop = 5;
 
-  totalLoaded = false;
+  totalLoaded = 0;
   loaded = false;
 
   octoniusInfo = false;
