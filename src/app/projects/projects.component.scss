@@ -7,7 +7,7 @@
   grid-auto-rows: min-content;
   grid-gap: 2rem;
   padding: 15rem 0 0 0;
-  min-height: 300vh;
+  min-height: 100vh;
   background-image: linear-gradient(to right, rgba(#0f3a88, .8), rgba(#09224f, .8)), url("/assets/images/desk-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,9 +95,9 @@
 
 
 /* #### ANIMATIONS #### */
-@keyframes slide-in-left {
+@keyframes diagonal-slide-in-left {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateY(30%);
     opacity: 0;
   }
   to {
@@ -106,9 +106,9 @@
   }
 }
 
-@keyframes slide-in-right {
+@keyframes diagonal-slide-in-right {
   from {
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(30%);
     opacity: 0;
   }
   to {
@@ -116,10 +116,33 @@
     opacity: 1;
   }
 }
+@keyframes slide-in-bottom {
+  from {
+    transform: translateY(70%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-.spinner-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// ANIMATION CLASSES
+
+.octonius-animation {
+  animation-name: diagonal-slide-in-left;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.smartfit-animation {
+  animation-name: diagonal-slide-in-right;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.hp-animation {
+  animation-name: slide-in-bottom;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
