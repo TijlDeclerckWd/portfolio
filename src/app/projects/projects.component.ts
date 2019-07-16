@@ -36,6 +36,7 @@ export class ProjectsComponent implements OnInit {
 
   paddingTop = 5;
 
+  totalLoaded = false;
   loaded = false;
 
   octoniusInfo = false;
@@ -60,6 +61,14 @@ export class ProjectsComponent implements OnInit {
 
   changeStyle(status) {
     this.paddingTop = status === 'open' ? 15 : 5;
+  }
+
+  imgLoaded() {
+    this.totalLoaded++;
+
+    if (this.totalLoaded === 2) {
+      this.loaded = true;
+    }
   }
 
   toggleInfo(type) {
