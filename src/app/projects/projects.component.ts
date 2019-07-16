@@ -43,6 +43,8 @@ export class ProjectsComponent implements OnInit {
   smartfitInfo = false;
   hpwuInfo = false;
 
+  animationsReady = false;
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
@@ -70,6 +72,7 @@ export class ProjectsComponent implements OnInit {
 
     if (this.imagesLoaded === 3) {
       this.ngxService.stop();
+      this.animationsReady = true;
     }
   }
 
