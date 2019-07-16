@@ -16,11 +16,15 @@
     grid-template-columns: 2rem repeat(8, 1fr) 2rem;
   }
 
+  @include respond(tab-port) {
+    grid-template-columns: 2rem repeat(8, 1fr) 2rem;
+  }
+
 
   .project {
 
     @include respond(tab-port) {
-      grid-column: 2 / 10 !important;
+      grid-column: 1 / -1 !important;
     }
     &--octonius {
       grid-column: 2/6;
@@ -37,6 +41,10 @@
 
     .example-card {
       color: #666;
+
+      @include respond(tab-port) {
+        border-radius: 0;
+      }
 
       .card-content {
         margin-top: 1rem;
