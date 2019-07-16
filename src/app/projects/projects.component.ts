@@ -26,7 +26,7 @@ export class ProjectsComponent implements OnInit {
   hpImages = [
     '/assets/images/hp-home.png',
     '/assets/images/hp-home-2.png',
-    '/assets/images/hp-map-2.png',
+    '/assets/images/hp-map.png',
     '/assets/images/hp-forum.png',
     '/assets/images/hp-chat.png',
     '/assets/images/hp-login.png',
