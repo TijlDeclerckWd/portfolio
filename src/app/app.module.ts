@@ -24,7 +24,15 @@ import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { CarouselComponent } from './common/carousel/carousel.component';
+import {NgxUiLoaderConfig, NgxUiLoaderModule, SPINNER} from 'ngx-ui-loader';
 
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  fgsType: SPINNER.foldingCube,
+  fgsColor: '#ffffff',
+  overlayColor: '#09224f',
+  pbThickness: 5, // progress bar thickness
+  pbColor: '#bdbab9'
+};
 
 
 @NgModule({
@@ -46,14 +54,9 @@ import { CarouselComponent } from './common/carousel/carousel.component';
     MatButtonModule,
     MatProgressSpinnerModule,
     NgbModalModule,
-    NotifierModule.withConfig({
-      position: {
-        horizontal: {
-          position: 'right'
-        }
-      }
-    }),
-    FontAwesomeModule
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    FontAwesomeModule,
+    NotifierModule
   ],
   providers: [
 PortfolioService

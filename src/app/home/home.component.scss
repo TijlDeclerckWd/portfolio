@@ -74,10 +74,7 @@
         line-height: 3.8rem;
         font-family: montserrat, sans-serif;
         margin-bottom: 2rem;
-        -webkit-transform-origin: 100% 0;
-        transform-origin: 100% 0;
-        animation-name: slide-in-right;
-        animation-duration: 2.5s;
+
 
 
         @include respond(tab-port) {
@@ -95,10 +92,7 @@
         font-weight: 600;
         opacity: 0;
         font-family: montserrat, sans-serif;
-        animation-name: fade-in;
-        animation-duration: 1s;
-        animation-delay: 2.5s;
-        animation-fill-mode: forwards;
+
 
         @include respond(tab-port) {
           font-size: 2.2rem;
@@ -131,11 +125,7 @@
           margin-right: 1.5rem;
           opacity: 0;
           transition: all .3s !important;
-          -webkit-transition: all .3s !important;
-          animation-name: fade-in-2;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-          -webkit-animation-fill-mode: forwards;
+
           cursor: pointer;
 
           &:hover {
@@ -331,6 +321,28 @@
 
 .bottom {
   transform: translateY(10rem);
+}
+
+.title-animation {
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  animation-name: slide-in-right;
+  animation-duration: 2.5s;
+}
+
+.subtitle-animation {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.icon-animation {
+  -webkit-transition: all .3s !important;
+  animation-name: fade-in-2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 }
 
 

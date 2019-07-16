@@ -1,6 +1,7 @@
 import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {PortfolioService} from '../services/portfolio.service';
 import {takeUntil} from 'rxjs/operators';
+import {NgxUiLoaderService} from 'ngx-ui-loader';
 
 @Component({
   selector: 'home',
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   navStatus = 'closed';
   subscription;
 
+  animationsReady = false;
+
   imgUrl;
   imgPreloadUrl = '/assets/images/home-background-10-sm.png';
 
@@ -22,9 +25,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscribeToNavStatus();
   }
 
-  constructor(private portfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService, private ngxService: NgxUiLoaderService) { }
 
   ngOnInit() {
+    this.ngxService.start();
    this.innerWidth = window.innerWidth;
 
    this.subscribeToNavStatus();
@@ -52,7 +56,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   setImgUrl() {
-      this.imgUrl = `${this.imgPreloadUrl}`;
+    this.imgUrl = `${this.imgPreloadUrl}`;
+    this.ngxService.stop();
+    this.animationsReady = true;
+
   }
 
   subscribeToNavStatus() {

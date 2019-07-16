@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {PortfolioService} from '../services/portfolio.service';
+import {NgxUiLoaderService} from 'ngx-ui-loader';
 
 
 @Component({
@@ -36,8 +37,7 @@ export class ProjectsComponent implements OnInit {
 
   paddingTop = 5;
 
-  totalLoaded = 0;
-  loaded = false;
+  imagesLoaded = 0;
 
   octoniusInfo = false;
   smartfitInfo = false;
@@ -48,9 +48,11 @@ export class ProjectsComponent implements OnInit {
     this.innerWidth = window.innerWidth;
   }
 
-  constructor(private portfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService, private ngxService: NgxUiLoaderService) { }
 
   ngOnInit() {
+    this.ngxService.start();
+
     this.innerWidth = window.innerWidth;
 
     this.portfolioService.toggleNav
@@ -61,6 +63,14 @@ export class ProjectsComponent implements OnInit {
 
   changeStyle(status) {
     this.paddingTop = status === 'open' ? 15 : 5;
+  }
+
+  imgLoaded() {
+    this.imagesLoaded++;
+
+    if (this.imagesLoaded === 3) {
+      this.ngxService.stop();
+    }
   }
 
 

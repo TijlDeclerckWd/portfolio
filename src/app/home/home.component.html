@@ -1,15 +1,27 @@
 <img [src]="imgPreloadUrl" (load)="setImgUrl()" alt="home-background" class="pre-load">
-<ng-container *ngIf="imgUrl; else spinner">
+<ng-container>
   <section class="header">
     <div class="container-fluid header-container">
       <div class="img" [style.background-image]="'linear-gradient(to bottom right, rgba(60,85,130,.2), rgba(9,34,79,.2)), url(\'/assets/images/home-background-final.png\')'"></div>
       <div class="titles-container" [ngClass]="{'top': !bottomPosition(), 'bottom': bottomPosition()}">
-        <h1 class="title">Hi, I'm Tijl!</h1>
-        <h4 class="subtitle">Web Developer from Brussels, Belgium</h4>
+        <h1 class="title" [ngClass]="{'title-animation': animationsReady}">Hi, I'm Tijl!</h1>
+        <h4 class="subtitle" [ngClass]="{'subtitle-animation': animationsReady}">Web Developer from Brussels, Belgium</h4>
         <div class="logo-container">
-          <a href="https://www.linkedin.com/in/tijl-declerck-aa4067179/" target="_blank"><i class="fa fa-linkedin circle"></i></a>
-          <a href="https://twitter.com/DevTijl" target="_blank"><i class="fa fa-twitter circle"></i></a>
-          <a href="https://www.facebook.com/tijl.declerck" target="_blank"><i class="fa fa-facebook circle"></i></a>
+          <a
+            href="https://www.linkedin.com/in/tijl-declerck-aa4067179/"
+            target="_blank">
+            <i
+              class="fa fa-linkedin circle"
+              [ngClass]="{'icon-animation': animationsReady}">
+
+            </i>
+          </a>
+          <a href="https://twitter.com/DevTijl" target="_blank">
+            <i class="fa fa-twitter circle" [ngClass]="{'icon-animation': animationsReady}"></i>
+          </a>
+          <a href="https://www.facebook.com/tijl.declerck" target="_blank">
+            <i class="fa fa-facebook circle" [ngClass]="{'icon-animation': animationsReady}"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -42,9 +54,3 @@
   <who-am-i></who-am-i>
   <other-skills></other-skills>
 </ng-container>
-
-<ng-template #spinner>
-  <div class="spinner">
-    <mat-spinner></mat-spinner>
-  </div>
-</ng-template>
