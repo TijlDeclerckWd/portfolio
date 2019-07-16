@@ -16,16 +16,6 @@
     grid-template-columns: 2rem repeat(8, 1fr) 2rem;
   }
 
-  &__title {
-    grid-column: 1 / -1;
-      font-size: 3.5rem;
-      text-align: center;
-      text-transform: uppercase;
-      color: #fff;
-      font-weight: 600 !important;
-      margin-bottom: 2rem;
-    letter-spacing: 2px;
-  }
 
   .project {
 
